@@ -3,17 +3,17 @@ import React from 'react';
 export class Menu extends React.Component {
   constructor(props) {
     super(props);
-    this.changeVideo = this.changeVideo.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
-  changeVideo(e) {
-    const video = e.target.value;
-    this.props.chooseVideo(value);
+  handleClick(e) {
+    let text = e.target.value;
+    this.props.chooseVideo(text);
   }
 
   render() {
     return (
-      <form chooseVideo={this.changeVideo} >
+      <form onClick={this.handleClick} >
         <input type="radio" name="src" value="fast" /> fast
         <input type="radio" name="src" value="slow" /> slow
         <input type="radio" name="src" value="cute" /> cute
